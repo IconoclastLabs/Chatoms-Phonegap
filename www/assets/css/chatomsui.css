@@ -1,0 +1,16 @@
+#curChatom
+{
+	font-size: 1.5em;
+
+	color: #FFF;
+	text-shadow: black 0.1em 0.1em 0.2em;
+	padding-top: 20px;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+.button
+{
+	padding: 10px;	
+	margin-bottom: 15px;
+}

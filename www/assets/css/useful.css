@@ -1,0 +1,163 @@
+@charset "utf-8";
+/* Gantix LLC Common useful CSS */
+.cozy
+{
+	width: 90%;
+}
+
+.superCozy
+{
+	width: 80%;
+}
+
+.middle
+{
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.cleared
+{
+	clear: both;
+}
+
+.clearDiv
+{
+	clear:both; 
+	height: 1px;
+}
+
+.imageLeft
+{
+	float: left;
+	padding-right: 15px;
+}
+
+.imageRight
+{
+	float: right;
+	padding-left: 5px;
+}
+
+.rounded
+{
+	-moz-border-radius: 25px;
+	border-radius: 25px;
+	-webkit-border-radius: 25px;
+}
+
+.transparent
+{
+        filter:alpha(opacity=30);
+        -moz-opacity:0.3;
+        -khtml-opacity: 0.3;
+        opacity: 0.3;	
+}
+
+.goodStanding
+{
+	color: green;
+	font-weight: bold;	
+	border: 1px solid green;	
+	padding: 0px 15px;
+	background-color: #020;
+	margin: 10px 0px;
+}
+
+.badStanding
+{
+	color: red;
+	font-weight: bold;
+	border: 1px solid red;
+	padding: 5px 15px;
+	background-color: #551F00;
+	margin: 10px 0px;	
+}
+
+.hangLeft
+{
+	float: left;
+}
+
+/* this devil magic right here will inject the required star infront of every field that uses it */
+.required:before
+{
+	content: "* ";
+	color: #f00;
+}
+
+label.error 
+{ 
+	float: none; 
+	color: red; 
+	padding-left: .5em; 
+	vertical-align: top; 
+	margin: 0 auto;
+}
+
+input.error, select.error
+{
+	border: 1px solid red;
+	background-color:#330000;
+}
+
+/* lots of useful button options */
+
+.button, .button:visited {
+	background: #222 url(../img/alert-overlay.png) repeat-x; 
+	display: inline-block; 
+	padding: 5px 10px 6px; 
+	color: #fff; 
+	height: auto;
+	text-decoration: none;
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px;
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+	border-bottom: 1px solid rgba(0,0,0,0.25);
+	position: relative;
+	cursor: pointer;
+	font-size: 14px; padding: 8px 14px 9px;
+	font-weight: bold;
+}
+
+.blue.button {
+	background-color: #3c74bb;
+}
+.red.button {
+	background-color: #e33100;
+}
+.magenta.button {
+	background-color: #a9014b;
+}
+.orange.button {
+	background-color: #ff5c00;
+}
+.yellow.button {
+	background-color: #ffb515;
+}
+
+.button:hover
+{ 
+	background-color: #265289; 
+	color: #fff; 
+}
+.button:active
+{ 
+	top: 1px; 
+}
+
+/* End lots of useful button options */
+
+
+.debugMessage
+{
+	padding-top: 10px;
+	background-color: #000;
+	color: #0C0;
+	font-family: "Courier New", Courier, monospace;
+	border-bottom: 1px solid #030;
+}
+
