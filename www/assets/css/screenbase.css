@@ -1,39 +1,126 @@
+/* line 16, /Users/gantman/Documents/Projects/conversationstarter/app/assets/stylesheets/main_format.css.scss.erb */
 html,
 body {
-	margin:0;
-	padding:0;
-	height:100%;
-
-	background-color: #56a5c7;   
-   	background-image: url("../img/backer.png");   
-   	background-repeat: repeat-x;
-   	background-position: top;
-	
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	-webkit-text-size-adjust: auto;
+	-ms-text-size-adjust: auto;
+	background: url("../img/backer.png") repeat-x center top;
 	font-family: Verdana, Geneva, sans-serif;
 	font-size: 1em;
+	background-color: #56a5c7;
 }
-#container {
-   min-height:100%;
-   position:relative;
-}
-#header {
-   background:#fff;
-   background-image: url("../img/whitey.png");
-   padding:2px;
-   height: 115px;
-   overflow: visible;
-   text-align: center;
-   border-bottom: 4px solid #000;
-}
-#body {
-   padding:10px;
-   padding-bottom:110px;   /* Height of the footer */
 
+/* line 30, /Users/gantman/Documents/Projects/conversationstarter/app/assets/stylesheets/main_format.css.scss.erb */
+#wholesite {
+	min-height: 100%;
+	position: relative;
 }
+
+/* line 34, /Users/gantman/Documents/Projects/conversationstarter/app/assets/stylesheets/main_format.css.scss.erb */
+#header {
+	background: #fff;
+	background-image: url("../img/whitey.png");
+	padding: 2px;
+	height: 125px;
+	overflow: visible;
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.4em;
+}
+
+/* line 44, /Users/gantman/Documents/Projects/conversationstarter/app/assets/stylesheets/main_format.css.scss.erb */
+#body {
+	padding-bottom: 110px;
+	/* Height of the footer */
+}
+
+/* line 48, /Users/gantman/Documents/Projects/conversationstarter/app/assets/stylesheets/main_format.css.scss.erb */
 #footer {
-   position:absolute;
-   bottom:0;
-   width:100%;
-   height:110px;   /* Height of the footer */
-   background-color: #56a5c7;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 110px;
+	/* Height of the footer */
+	overflow: hidden;
+	background-color: rgba(0, 0, 0, 0.2);
+	vertical-align: bottom;
+	border-top: 1px dashed rgba(0, 0, 0, 0.4);
+	/* Looks like garbage */
+	background: url("../img/dot.png") repeat scroll 0 0 #343434;
+	padding-top: 15px;
+	color: #fff;
 }
+/* line 65, /Users/gantman/Documents/Projects/conversationstarter/app/assets/stylesheets/main_format.css.scss.erb */
+#footer div {
+	vertical-align: bottom;
+}
+/* line 69, /Users/gantman/Documents/Projects/conversationstarter/app/assets/stylesheets/main_format.css.scss.erb */
+#footer ol, #footer ul {
+	list-style: none outside none;
+}
+/* line 72, /Users/gantman/Documents/Projects/conversationstarter/app/assets/stylesheets/main_format.css.scss.erb */
+#footer ol li, #footer ul li {
+	float: left;
+}
+
+/* line 80, /Users/gantman/Documents/Projects/conversationstarter/app/assets/stylesheets/main_format.css.scss.erb */
+.navButton {
+	z-index: 500;
+}
+
+/* line 85, /Users/gantman/Documents/Projects/conversationstarter/app/assets/stylesheets/main_format.css.scss.erb */
+.starter-category {
+	color: #fff;
+}
+
+/* line 131, /Users/gantman/Documents/Projects/conversationstarter/app/assets/stylesheets/main_format.css.scss.erb */
+.absPos {
+	position: absolute;
+	width: 75%;
+}
+
+/* line 136, /Users/gantman/Documents/Projects/conversationstarter/app/assets/stylesheets/main_format.css.scss.erb */
+.info, .success, .warning, .error, .validation {
+	border: 1px solid;
+	margin: 10px 0px;
+	padding: 15px 10px 15px 50px;
+	background-repeat: no-repeat;
+	background-position: 10px center;
+	z-index: 5;
+}
+
+/* line 145, /Users/gantman/Documents/Projects/conversationstarter/app/assets/stylesheets/main_format.css.scss.erb */
+.info {
+	color: #00529B;
+	background-color: #BDE5F8;
+	background-image: url("../img/info.png");
+}
+
+/* line 150, /Users/gantman/Documents/Projects/conversationstarter/app/assets/stylesheets/main_format.css.scss.erb */
+.success {
+	color: #4F8A10;
+	background-color: #DFF2BF;
+	background-image: url("../img/success.png");
+}
+
+/* line 155, /Users/gantman/Documents/Projects/conversationstarter/app/assets/stylesheets/main_format.css.scss.erb */
+.warning {
+	color: #9F6000;
+	background-color: #FEEFB3;
+	background-image: url("../img/warning.png");
+}
+
+/* line 160, /Users/gantman/Documents/Projects/conversationstarter/app/assets/stylesheets/main_format.css.scss.erb */
+.error {
+	color: #D8000C;
+	background-color: #FFBABA;
+	background-image: url("../img/error.png");
+}
+
+/* line 180, /Users/gantman/Documents/Projects/conversationstarter/app/assets/stylesheets/main_format.css.scss.erb */
+.catName {
+	padding-left: 35px;
+}
+
