@@ -63,6 +63,7 @@
 
   </head>
   <body onload="onBodyLoad()">
+	<div class='wholesite' data-role='page' id='mainPage'>
       <div id="container">
           <header>
               <div id="header">
@@ -70,6 +71,13 @@
               </div>
           </header>
           <section>
+			  <div class='headerBar' data-role='header'>
+				  <h2 class='starter-category'>
+					<span class='category-name'>
+						  Welcome!
+					</span>
+				  </h2>
+			  </div>  
             <div id="body" class="middle">
                 <div id="curChatom">Let's get started!</div>
                 <div class="clearDiv"></div>
@@ -78,11 +86,77 @@
           <footer>
               <div id="footer" class="middle">
                   <a id="getNewChatom" class="button blue cozy" href="#" >New Chatom</a>      
-                  <a id="changeCategories" class="button blue cozy" href="#">Categories</a>        
+                  <a id="changeCategories" class="button blue cozy" href="#categoryList">Categories</a>        
               </div>
           </footer>
       </div>
-
+	</div>
+	  <!-- Categories Page -->
+	  <div class='categoryPage' data-role='page' id='categoryList'>
+		  <div class='headerBar' data-role='header'>
+			  <h2>
+				Categories
+			  </h2>
+		  </div>
+		  <div class='categoryContent' data-role='content' data-theme='c'>
+			  <div data-role='fieldcontain' id='categories'>
+				  <fieldset data-role='controlgroup'>
+					  <label class='custom' for='category1'>
+						  <img alt="Normal" class="ui-li-icon ui-li-thumb" src="assets/img/catNormal.png" />
+						  <span class='catName'>
+							  Normal
+						  </span>
+					  </label>
+					  <input checked class='categoryRadio custom' id='category1' name='Normal' type='checkbox' value='1'>
+						  <label class='custom' for='category2'>
+							  <img alt="Fun" class="ui-li-icon ui-li-thumb" src="assets/img/catFun.png" />
+							  <span class='catName'>
+								  Fun
+							  </span>
+						  </label>
+						  <input checked class='categoryRadio custom' id='category2' name='Fun' type='checkbox' value='2'>
+							  <label class='custom' for='category3'>
+								  <img alt="Philosophy" class="ui-li-icon ui-li-thumb" src="assets/img/catPhilosophy.png" />
+								  <span class='catName'>
+									  Philosophy
+								  </span>
+							  </label>
+							  <input checked class='categoryRadio custom' id='category3' name='Philosophy' type='checkbox' value='3'>
+								  <label class='custom' for='category4'>
+									  <img alt="Out there" class="ui-li-icon ui-li-thumb" src="assets/img/catOut There.png" />
+									  <span class='catName'>
+										  Out There
+									  </span>
+								  </label>
+								  <input checked class='categoryRadio custom' id='category4' name='Out There' type='checkbox' value='4'>
+									  <label class='custom' for='category5'>
+										  <img alt="Love" class="ui-li-icon ui-li-thumb" src="assets/img/catLove.png" />
+										  <span class='catName'>
+											  Love
+										  </span>
+									  </label>
+									  <input checked class='categoryRadio custom' id='category5' name='Love' type='checkbox' value='5'>
+										  <label class='custom' for='category6'>
+											  <img alt="Naughty" class="ui-li-icon ui-li-thumb" src="assets/img/catNaughty.png" />
+											  <span class='catName'>
+												  Naughty
+											  </span>
+										  </label>
+										  <input checked class='categoryRadio custom' id='category6' name='Naughty' type='checkbox' value='6'>
+											  <label class='custom' for='category7'>
+												  <img alt="Personal" class="ui-li-icon ui-li-thumb" src="assets/img/catPersonal.png" />
+												  <span class='catName'>
+													  Personal
+												  </span>
+											  </label>
+											  <input class='categoryRadio custom' id='category7' name='Personal' type='checkbox' value='7'>
+												  </fieldset>
+			  </div>
+			  <a data-rel='back' data-role='button' data-theme='b' href='#'>
+				  Done
+			  </a>
+		  </div>
+	  </div>	  
       
       
       
