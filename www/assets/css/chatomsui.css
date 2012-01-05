@@ -14,3 +14,37 @@
 	padding: 10px;	
 	margin-bottom: 15px;
 }
+
+
+/*Fixes for  jquerymobile */
+.ui-page   {
+    /* For < CSS3 Browsers */
+   	background: url("<%= asset_path('backer.png') %>") repeat-x center top;
+    /* For Browser sthat support multiple backgrounds */
+    background: url("<%= asset_path('new_mathematics.png') %>") repeat, url("<%= asset_path('backer.png') %>") repeat-x center top;
+}
+
+/* Get rid of silly shadow*/
+.ui-body-c, .ui-dialog.ui-overlay-c {
+    text-shadow: 0 0 0 #000;
+}
+
+/*Pop up dialog background clear */
+.ui-body-a, .ui-dialog.ui-overlay-a {
+    background: none;
+}
+
+/* Next Chatom Button size down */
+section .controls
+{
+    width: 300px;
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 25px;
+}
+
+/* Align form stuffs */
+input.ui-input-text
+{
+    margin: 5px;
+}

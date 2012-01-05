@@ -1,18 +1,20 @@
-(function() {
-    jQuery(function() {
-        $("#getNewChatom").unbind('click').click(function(event) {
-            event.preventDefault();
-            return $.getJSON('http://frattmans.com:3000/chatom.json', function(chatom) {
-                return $("#curChatom").text(chatom.text);
-            });
-        });
-    return $(document).keypress(function(e) {
-        switch (e.which) {
-            case 32:
-                return $.getJSON('/chatom.json', function(chatom) {
-            return $("#curChatom").text(chatom.text);
-            });
-            }
-        });
-    });
-}).call(this);
+$(document).ready(function() {
+  $("#getNewChatom").unbind('click').click(function(event) {
+    event.preventDefault();
+    //alert("YO");
+    return newChatom(); 
+  });
+
+
+
+  newChatom = function() 
+  {
+    return $.getJSON('http://chatoms.com/chatom.json?personal=2', $(".categoryRadio:checked"), function(chatom) 
+    {
+        //$('.category-name').text(window.categories[chatom.starters_category_id - 1]);
+        $("#curChatom").hide().text(chatom.text).fadeIn();
+    }); // end getJSON
+
+  }; // end newChatom
+  
+}); // end Docready

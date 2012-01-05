@@ -25,7 +25,7 @@
 	<key>ExternalHosts</key>
 	<array>
 		<string>*googleapis.com</string>
-		<string>*frattmans.com</string>
+		<string>*chatoms.com</string>
 		<string>*phonegap.com</string>
 	</array>
 	<key>Plugins</key>
