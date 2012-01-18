@@ -27,6 +27,7 @@
 		<string>*googleapis.com</string>
 		<string>*chatoms.com</string>
 		<string>*phonegap.com</string>
+		<string>code.jquery.com</string>
 	</array>
 	<key>Plugins</key>
 	<dict>

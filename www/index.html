@@ -48,6 +48,8 @@
 	{
 		// do your thing!
 		//navigator.notification.alert("PhoneGap is working")
+		// Set up the categories
+		//categoriesLoad();
 	}
     
     </script>
@@ -58,7 +60,8 @@
         <link href="assets/css/useful.css" media="screen, projection" rel="stylesheet" type="text/css" />    
         <link href="assets/css/chatomsui.css" media="screen, projection" rel="stylesheet" type="text/css" />  
         <script src="assets/js/jquery.mobile-1.0.min.js" type="text/javascript"></script>  
-        <script src="assets/js/chatom.js" type="text/javascript"></script>            
+        <script src="assets/js/chatom.js" type="text/javascript"></script>   
+		<script src="assets/js/lawnchair-0.6.1.min.js" type="text/javascript"></script>
         <meta name = "viewport" content = "user-scalable=no,width=device-width" />
 
   </head>
@@ -79,7 +82,7 @@
 				  </h2>
 			  </div>  
             <div id="body" class="middle">
-                <div id="curChatom">Let's get started!</div>
+                <div id="curChatom">Let's start chatting!</div>
                 <div class="clearDiv"></div>
             </div>
           </section>
@@ -107,42 +110,42 @@
 							  Normal
 						  </span>
 					  </label>
-					  <input checked class='categoryRadio custom' id='category1' name='Normal' type='checkbox' value='1'>
+					  <input class='categoryRadio custom' id='category1' name='Normal' type='checkbox' value='1'>
 						  <label class='custom' for='category2'>
 							  <img alt="Fun" class="ui-li-icon ui-li-thumb" src="assets/img/catFun.png" />
 							  <span class='catName'>
 								  Fun
 							  </span>
 						  </label>
-						  <input checked class='categoryRadio custom' id='category2' name='Fun' type='checkbox' value='2'>
+						  <input class='categoryRadio custom' id='category2' name='Fun' type='checkbox' value='2'>
 							  <label class='custom' for='category3'>
 								  <img alt="Philosophy" class="ui-li-icon ui-li-thumb" src="assets/img/catPhilosophy.png" />
 								  <span class='catName'>
 									  Philosophy
 								  </span>
 							  </label>
-							  <input checked class='categoryRadio custom' id='category3' name='Philosophy' type='checkbox' value='3'>
+							  <input class='categoryRadio custom' id='category3' name='Philosophy' type='checkbox' value='3'>
 								  <label class='custom' for='category4'>
 									  <img alt="Out there" class="ui-li-icon ui-li-thumb" src="assets/img/catOut There.png" />
 									  <span class='catName'>
 										  Out There
 									  </span>
 								  </label>
-								  <input checked class='categoryRadio custom' id='category4' name='Out There' type='checkbox' value='4'>
+								  <input class='categoryRadio custom' id='category4' name='Out There' type='checkbox' value='4'>
 									  <label class='custom' for='category5'>
 										  <img alt="Love" class="ui-li-icon ui-li-thumb" src="assets/img/catLove.png" />
 										  <span class='catName'>
 											  Love
 										  </span>
 									  </label>
-									  <input checked class='categoryRadio custom' id='category5' name='Love' type='checkbox' value='5'>
+									  <input class='categoryRadio custom' id='category5' name='Love' type='checkbox' value='5'>
 										  <label class='custom' for='category6'>
 											  <img alt="Naughty" class="ui-li-icon ui-li-thumb" src="assets/img/catNaughty.png" />
 											  <span class='catName'>
 												  Naughty
 											  </span>
 										  </label>
-										  <input checked class='categoryRadio custom' id='category6' name='Naughty' type='checkbox' value='6'>
+										  <input class='categoryRadio custom' id='category6' name='Naughty' type='checkbox' value='6'>
 											  <label class='custom' for='category7'>
 												  <img alt="Personal" class="ui-li-icon ui-li-thumb" src="assets/img/catPersonal.png" />
 												  <span class='catName'>
@@ -152,7 +155,7 @@
 											  <input class='categoryRadio custom' id='category7' name='Personal' type='checkbox' value='7'>
 												  </fieldset>
 			  </div>
-			  <a data-rel='back' data-role='button' data-theme='b' href='#'>
+			  <a data-rel='back' data-role='button' data-theme='b' href='#' id="DoneCategories">
 				  Done
 			  </a>
 		  </div>

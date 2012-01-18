@@ -21,9 +21,7 @@
 /*Fixes for  jquerymobile */
 .ui-page   {
     /* For < CSS3 Browsers */
-   	background: url("<%= asset_path('backer.png') %>") repeat-x center top;
-    /* For Browser sthat support multiple backgrounds */
-    background: url("<%= asset_path('new_mathematics.png') %>") repeat, url("<%= asset_path('backer.png') %>") repeat-x center top;
+   	background: url("../img/backer.png") repeat-x center top;
 }
 
 /* Get rid of silly shadow*/
