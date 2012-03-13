@@ -1,3 +1,5 @@
+window.chatoms = Array();
+
 $(document).ready(function() {
 				  
 	chatomsLoad();
@@ -15,12 +17,21 @@ $(document).ready(function() {
 
   newChatom = function() 
   {
-    return $.getJSON('http://chatoms.com/chatom.json', $(".categoryRadio:checked"), function(chatom) 
+		
+				  /*
+	$.getJSON('http://chatoms.com/chatom.json', $(".categoryRadio:checked"), function(chatom) 
     {
         $('.category-name').text(window.categories[chatom.starters_category_id - 1]);
         $("#curChatom").hide().text(chatom.text).fadeIn();
     }); // end getJSON
+				  */
+		
+	curChatom = getRandomChatom();			  
+	//alert(curChatom);			  
+	$('.category-name').text(window.categories[curChatom.starters_category_id - 1]);
+	$("#curChatom").hide().text(curChatom.text).fadeIn();
 
+				  
   }; // end newChatom
 				  
 	// handle saving checkboxes when they click done
@@ -33,16 +44,22 @@ $(document).ready(function() {
   
 }); // end Docready
 
+function getRandomChatom()
+{
+	return window.chatoms[1].pop();	
+}
+
 function chatomsLoad()
 {
-	
+	grabAllChatoms();
 }
 
 // This function grabs all the chatoms from starters.json and then parses them into arrays for each category
 function grabAllChatoms()
 {
+	var jsonChatoms = Array();
 	// read file of all conversation starters			  
-	$.getJSON('assets/js/starters.json', function(allChatoms)
+	jsonChatoms = $.getJSON('assets/js/starters.json', function(allChatoms)
 	{
 		// First randomize the array
 		allChatoms.sort(function() {return 0.5 - Math.random()}) //Array elements now scrambled
@@ -62,12 +79,14 @@ function grabAllChatoms()
 				localStarters[curCategory] = Array();
 			} // end if
 					 
-			localStarters[curCategory].push(curChatom.text); 
+			localStarters[curCategory].push(curChatom); 
 		});  // end each
-		
+														
+		window.chatoms = localStarters;
 		return localStarters;			  
 	});	
 	
+	return jsonChatoms;
 }
 
 
