@@ -1,5 +1,7 @@
 $(document).ready(function() {
 				  
+	chatomsLoad();
+				  
 	window.categories = [];
 		$('input:checkbox').each(function() {
 		return window.categories.push($(this).attr('name'));
@@ -30,6 +32,43 @@ $(document).ready(function() {
 	categoriesLoad();
   
 }); // end Docready
+
+function chatomsLoad()
+{
+	
+}
+
+// This function grabs all the chatoms from starters.json and then parses them into arrays for each category
+function grabAllChatoms()
+{
+	// read file of all conversation starters			  
+	$.getJSON('assets/js/starters.json', function(allChatoms)
+	{
+		// First randomize the array
+		allChatoms.sort(function() {return 0.5 - Math.random()}) //Array elements now scrambled
+		// iterate over all the JSON and place in correct category location
+		var localStarters = Array();
+		var curCategory;
+			
+		$.each(allChatoms, function(i, curChatom) {
+			curCategory = curChatom.starters_category_id;
+			// make it an array if it's not
+			if (localStarters[curCategory] instanceof Array)
+			{
+				// nothing
+			}
+			else 
+			{
+				localStarters[curCategory] = Array();
+			} // end if
+					 
+			localStarters[curCategory].push(curChatom.text); 
+		});  // end each
+		
+		return localStarters;			  
+	});	
+	
+}
 
 
 function categoriesLoad()
