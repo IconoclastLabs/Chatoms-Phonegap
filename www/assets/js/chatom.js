@@ -1,11 +1,11 @@
 window.chatoms = Array();
+window.liveCategories = Array();
 
 $(document).ready(function() {
 				  
-	chatomsLoad();
 				  
 	window.categories = [];
-		$('input:checkbox').each(function() {
+	$('input:checkbox').each(function() {
 		return window.categories.push($(this).attr('name'));
 	});				  
 				  
@@ -17,14 +17,6 @@ $(document).ready(function() {
 
   newChatom = function() 
   {
-		
-				  /*
-	$.getJSON('http://chatoms.com/chatom.json', $(".categoryRadio:checked"), function(chatom) 
-    {
-        $('.category-name').text(window.categories[chatom.starters_category_id - 1]);
-        $("#curChatom").hide().text(chatom.text).fadeIn();
-    }); // end getJSON
-				  */
 		
 	curChatom = getRandomChatom();			  
 	//alert(curChatom);			  
@@ -39,14 +31,23 @@ $(document).ready(function() {
 		saveCategories();
 	});
 
-// Load up the categories for this user
+	// Load up the categories for this user
 	categoriesLoad();
-  
+  	// Load chatoms
+	chatomsLoad();
 }); // end Docready
+
+function updateCategories() 
+{
+	window.liveCategories = [];
+	$('input:checkbox').each(function() {
+		return window.liveCategories.push($(this).attr('value'));
+	});	
+}
 
 function getRandomChatom()
 {
-	return window.chatoms[1].pop();	
+	return window.chatoms.pop();	
 }
 
 function chatomsLoad()
@@ -63,23 +64,21 @@ function grabAllChatoms()
 	{
 		// First randomize the array
 		allChatoms.sort(function() {return 0.5 - Math.random()}) //Array elements now scrambled
-		// iterate over all the JSON and place in correct category location
+		// iterate over all the JSON and place in global if the category is live
 		var localStarters = Array();
 		var curCategory;
 			
 		$.each(allChatoms, function(i, curChatom) {
 			curCategory = curChatom.starters_category_id;
-			// make it an array if it's not
-			if (localStarters[curCategory] instanceof Array)
+			// check if category is in the allowed list 
+		    //via http://stackoverflow.com/questions/1181575/javascript-determine-whether-an-array-contains-a-value
+			   
+			if (window.liveCategories.indexOf(curCategory) > -1)
 			{
-				// nothing
-			}
-			else 
-			{
-				localStarters[curCategory] = Array();
+				localStarters.push(curChatom); 
 			} // end if
 					 
-			localStarters[curCategory].push(curChatom); 
+			
 		});  // end each
 														
 		window.chatoms = localStarters;
@@ -111,7 +110,9 @@ function categoriesLoad()
 			}
 		});
 	}); // end Lawnchair
-	
+
+	// keep array of categories
+	updateCategories();
 } // end categoriesLoad
 
 function saveCategories()
@@ -121,6 +122,8 @@ function saveCategories()
 					//console.log(newConfig);
 		});
 	});		
+	// keep array of categories
+	updateCategories();
 }
 
 function checkedCategories()
