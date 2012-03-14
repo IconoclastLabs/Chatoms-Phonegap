@@ -16,8 +16,7 @@ $(document).ready(function() {
   });
 
   newChatom = function() 
-  {
-		
+  {		
 	curChatom = getRandomChatom();			  
 	//alert(curChatom);			  
 	$('.category-name').text(window.categories[curChatom.starters_category_id - 1]);
@@ -43,6 +42,7 @@ function updateCategories()
 	$('input:checkbox').each(function() {
 		return window.liveCategories.push($(this).attr('value'));
 	});	
+	
 }
 
 function getRandomChatom()
@@ -73,17 +73,18 @@ function grabAllChatoms()
 			// check if category is in the allowed list 
 		    //via http://stackoverflow.com/questions/1181575/javascript-determine-whether-an-array-contains-a-value
 			   
-			if (window.liveCategories.indexOf(curCategory) > -1)
-			{
+			//if (window.liveCategories.indexOf(curCategory) > -1)
+			//{
 				localStarters.push(curChatom); 
-			} // end if
+			//} // end if
 					 
 			
 		});  // end each
-														
+		
 		window.chatoms = localStarters;
 		return localStarters;			  
 	});	
+	
 	
 	return jsonChatoms;
 }
