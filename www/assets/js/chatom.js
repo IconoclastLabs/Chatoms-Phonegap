@@ -36,17 +36,13 @@ $(document).ready(function() {
 	chatomsLoad();
 }); // end Docready
 
-function updateCategories() 
-{
-	window.liveCategories = [];
-	$('input:checkbox').each(function() {
-		return window.liveCategories.push($(this).attr('value'));
-	});	
-	
-}
-
 function getRandomChatom()
 {
+	// if we're out, grab more!
+	if (window.chatoms.length < 1)
+	{
+		grabAllChatoms();
+	}
 	return window.chatoms.pop();	
 }
 
@@ -70,17 +66,16 @@ function grabAllChatoms()
 			
 		$.each(allChatoms, function(i, curChatom) {
 			curCategory = curChatom.starters_category_id;
-			// check if category is in the allowed list 
-		    //via http://stackoverflow.com/questions/1181575/javascript-determine-whether-an-array-contains-a-value
-			   
-			//if (window.liveCategories.indexOf(curCategory) > -1)
-			//{
+			 
+				   //alert($.inArray(curCategory.toString(), checkedCategories()));   
+			if ($.inArray(curCategory.toString(), checkedCategories()) > -1)
+			{
+			   //alert("Pushing");
 				localStarters.push(curChatom); 
-			//} // end if
-					 
+			} // end if
 			
 		});  // end each
-		
+							
 		window.chatoms = localStarters;
 		return localStarters;			  
 	});	
@@ -112,8 +107,6 @@ function categoriesLoad()
 		});
 	}); // end Lawnchair
 
-	// keep array of categories
-	updateCategories();
 } // end categoriesLoad
 
 function saveCategories()
@@ -123,8 +116,8 @@ function saveCategories()
 					//console.log(newConfig);
 		});
 	});		
-	// keep array of categories
-	updateCategories();
+	// now get everything that fits that category
+	grabAllChatoms();
 }
 
 function checkedCategories()
