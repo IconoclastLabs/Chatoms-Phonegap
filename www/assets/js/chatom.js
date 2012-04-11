@@ -34,6 +34,9 @@ $(document).ready(function() {
 	categoriesLoad();
   	// Load chatoms
 	chatomsLoad();
+	return $(".navButton").click(function(event) {
+		return $(".categoryRadio:checked").attr("checked", true).checkboxradio("refresh");
+	});	
 }); // end Docready
 
 function getRandomChatom()
@@ -91,14 +94,12 @@ function categoriesLoad()
 		this.get('config', function(config) {
 			if (config == null)
 			{
-				console.log("Config Missing: Saving Default");				
-				this.save({key:'config', categories:[1,2,3,4]}, function(newConfig){
-					//console.log(newConfig);
-				});
+				//console.log("Config Missing: Saving Default");				
+				this.save({key:'config', categories:[1,2,3,4]});
 			}
 			else
 			{
-				console.log(config);
+				//console.log(config);
 				// for every enabled category, set the value to true
 				$.each(config.categories, function(index, value) {
 					$(".categoryRadio[value=" + value + "]").prop("checked", true);
